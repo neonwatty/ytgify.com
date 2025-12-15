@@ -40,6 +40,9 @@ jobs:
       - name: ESLint
         run: npm run lint
 
+      - name: Knip (unused code check)
+        run: npm run knip
+
       - name: Build
         run: npm run build
 
