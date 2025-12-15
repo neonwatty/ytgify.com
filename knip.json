@@ -1,0 +1,13 @@
+{
+  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "entry": ["app/**/*.{ts,tsx}", "lib/**/*.ts"],
+  "project": ["**/*.{ts,tsx,js,mjs}"],
+  "ignore": [
+    "content/**/*",
+    "scripts/**/*"
+  ],
+  "ignoreDependencies": [
+    "eslint-config-next",
+    "puppeteer"
+  ]
+}
