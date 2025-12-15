@@ -5,6 +5,7 @@ import DemoVideo from './components/DemoVideo';
 import ChromeStoreBadge from './components/ChromeStoreBadge';
 import FirefoxStoreBadge from './components/FirefoxStoreBadge';
 import ExampleGifsGallery from './components/ExampleGifsGallery';
+import WaitlistSection from './components/WaitlistSection';
 import SiteFooter from './components/SiteFooter';
 
 export default function Home() {
@@ -60,6 +61,9 @@ export default function Home() {
                 <FirefoxStoreBadge />
               </div>
             </div>
+
+            {/* Waitlist Section */}
+            <WaitlistSection />
           </div>
         </article>
 
