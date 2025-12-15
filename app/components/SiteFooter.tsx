@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Github, BookOpen } from 'lucide-react';
-import { FIREFOX_ADDON_URL } from '@/lib/constants';
+import { CHROME_EXTENSION_URL, FIREFOX_ADDON_URL } from '@/lib/constants';
 
 export default function SiteFooter() {
   const [currentYear, setCurrentYear] = useState(2025);
@@ -57,7 +57,7 @@ export default function SiteFooter() {
             Blog
           </Link>
           <a
-            href="https://chromewebstore.google.com/detail/ytgify/jhjdimdoghooebpklbfhpggnaakiollk"
+            href={CHROME_EXTENSION_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#a0a0a0] hover:text-white transition-colors"
