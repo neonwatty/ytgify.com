@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-export interface BlogPost {
+interface BlogPost {
   slug: string;
   title: string;
   description: string;
@@ -131,7 +131,7 @@ export function getRelatedPosts(
   return relatedPosts;
 }
 
-export function calculateReadTime(content: string): number {
+function calculateReadTime(content: string): number {
   const wordsPerMinute = 200;
   const wordCount = content.split(/\s+/).length;
   return Math.max(1, Math.ceil(wordCount / wordsPerMinute));
