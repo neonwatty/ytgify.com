@@ -7,10 +7,10 @@ export default function WaitlistSection() {
     <section className="mt-16 pt-12 border-t border-gray-800">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold mb-4 text-white">
-          Share Your GIFs Instantly
+          Coming Soon: Share Your GIFs Instantly
         </h2>
         <p className="text-gray-400 text-lg max-w-xl mx-auto">
-          We&apos;re building a home for your YouTube GIFs. Host, share, and discover.
+          We&apos;re building a home for your YouTube GIFs. Host, share, and discover - all free.
         </p>
       </div>
 
