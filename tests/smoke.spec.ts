@@ -17,8 +17,8 @@ test.describe('Landing Page Smoke Tests', () => {
     await page.goto('/');
     const badges = page.locator('a[href*="chromewebstore.google.com"]');
     await expect(badges.first()).toBeVisible();
-    // Verify we have multiple Chrome Store CTAs (top, after video, footer)
-    await expect(badges).toHaveCount(3);
+    // Verify we have multiple Chrome Store CTAs (top, social proof section, after video, footer)
+    await expect(badges).toHaveCount(5);
   });
 
   test('Firefox Add-on badge links correctly', async ({ page }) => {
