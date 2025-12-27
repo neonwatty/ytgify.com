@@ -1,6 +1,6 @@
 'use client';
 
-const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdnf__IdtVS9dXU-r6UbK4ljk2CBUD6YYw8XeSCyNY3roE2zw/viewform';
+import EmailCaptureForm from './EmailCaptureForm';
 
 export default function WaitlistSection() {
   return (
@@ -23,16 +23,14 @@ export default function WaitlistSection() {
       </div>
 
       {/* CTA */}
-      <div className="text-center">
-        <a
-          href={GOOGLE_FORM_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors text-lg"
-        >
-          Join the Waitlist
-        </a>
-        <p className="text-gray-500 text-sm mt-4">
+      <div className="max-w-md mx-auto">
+        <EmailCaptureForm
+          source="waitlist"
+          buttonText="Join the Waitlist"
+          successMessage="You're on the list!"
+          placeholder="you@example.com"
+        />
+        <p className="text-gray-500 text-sm mt-4 text-center">
           No spam. We&apos;ll only email you when sharing launches.
         </p>
       </div>
