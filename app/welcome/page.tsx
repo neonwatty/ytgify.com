@@ -12,9 +12,9 @@ export const metadata: Metadata = {
 export default function WelcomePage() {
   return (
     <>
-      {/* Google Ads Conversion Tracking - Replace AW-XXXXXXXXX with your actual conversion ID */}
+      {/* Google Ads Conversion Tracking */}
       <Script
-        src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"
+        src="https://www.googletagmanager.com/gtag/js?id=AW-17812979843"
         strategy="afterInteractive"
       />
       <Script id="google-ads-conversion" strategy="afterInteractive">
@@ -22,8 +22,7 @@ export default function WelcomePage() {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'AW-XXXXXXXXX');
-          gtag('event', 'conversion', {'send_to': 'AW-XXXXXXXXX/XXXXXXXXXXXXXXX'});
+          gtag('config', 'AW-17812979843');
         `}
       </Script>
 
