@@ -1,6 +1,12 @@
 import type { CaptureResult } from 'posthog-js';
 
 const privateCreatorPaths = new Set(['/studio', '/video-to-gif']);
+const privateCreatorProperties = [
+  '$raw_user_agent',
+  '$geoip_postal_code',
+  '$geoip_latitude',
+  '$geoip_longitude',
+] as const;
 
 export function filterPrivateCreatorEvent(event: CaptureResult | null): CaptureResult | null {
   if (!event || !isPrivateCreatorEvent(event)) return event;
@@ -23,6 +29,8 @@ function isPrivateCreatorEvent(event: CaptureResult): boolean {
 function sanitizeCreatorEvent(event: CaptureResult): CaptureResult {
   const properties = { ...event.properties };
   for (const key of ['$referrer', '$initial_referrer', '$initial_current_url']) delete properties[key];
+  for (const key of privateCreatorProperties) delete properties[key];
+  properties.$geoip_disable = true;
   if (typeof properties.$current_url === 'string') {
     const url = new URL(properties.$current_url, 'https://ytgify.com');
     properties.$current_url = `${url.origin}${normalizePath(url.pathname)}`;
