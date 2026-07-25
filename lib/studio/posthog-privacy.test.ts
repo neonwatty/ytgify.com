@@ -11,9 +11,16 @@ describe('PostHog private creator boundary', () => {
   it('allows only explicit Studio events on creator routes', () => {
     const event = capture('studio_export_succeeded', 'https://ytgify.com/video-to-gif/?utm_source=private');
     event.properties!.$referrer = 'https://search.example/private?q=secret';
+    event.properties!.$raw_user_agent = 'browser fingerprint';
+    event.properties!.$geoip_postal_code = '85331';
+    event.properties!.$geoip_latitude = 33.8874;
+    event.properties!.$geoip_longitude = -111.9508;
     expect(filterPrivateCreatorEvent(event)).toEqual({
       ...event,
-      properties: { $current_url: 'https://ytgify.com/video-to-gif' },
+      properties: {
+        $current_url: 'https://ytgify.com/video-to-gif',
+        $geoip_disable: true,
+      },
     });
   });
 
